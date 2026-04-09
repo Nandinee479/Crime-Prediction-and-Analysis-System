@@ -1,52 +1,159 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Crime Statistics</title>
-<link rel="stylesheet" href="style.css">
+ <title>Statistics - Crime Prediction System</title>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
 <div class="sidebar">
 
-<h2>Crime System</h2>
+<div class="sidebar-header">
+ <h2><i class="fas fa-shield-alt"></i> Crime System</h2>
+</div>
 
-<a href="dashboard.html">Dashboard</a>
-<a href="addcrime.html">Add Crime</a>
-<a href="viewcrime.html">View Crimes</a>
-<a href="statistics.html">Statistics</a>
-<a href="prediction.html">Prediction</a>
-<a href="hotspot.html">Hotspots</a>
+<nav>
+ <a href="dashboard.html">
+ <span class="icon"><i class="fas fa-home"></i></span>
+ <span>Dashboard</span>
+ </a>
+ <a href="addcrime.html">
+ <span class="icon"><i class="fas fa-plus-circle"></i></span>
+ <span>Add Crime</span>
+ </a>
+ <a href="viewcrime.html">
+ <span class="icon"><i class="fas fa-list"></i></span>
+ <span>View Crimes</span>
+ </a>
+ <a href="statistics.html" class="active">
+ <span class="icon"><i class="fas fa-chart-bar"></i></span>
+ <span>Statistics</span>
+ </a>
+ <a href="prediction.html">
+ <span class="icon"><i class="fas fa-brain"></i></span>
+ <span>Prediction</span>
+ </a>
+ <a href="hotspot.html">
+ <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+ <span>Hotspots</span>
+ </a>
+ <a href="login.html" style="margin-top:40px;">
+ <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+ <span>Logout</span>
+ </a>
+</nav>
 
 </div>
 
 <div class="topbar">
-Crime Statistics
+ <h1><i class="fas fa-chart-bar"></i> Crime Statistics</h1>
+ <div class="topbar-actions">
+ <div class="user-menu">
+ <div class="user-avatar">A</div>
+ <div class="user-info">
+ <span class="name">Admin User</span>
+ <span class="role">Administrator</span>
+ </div>
+ </div>
+ </div>
 </div>
 
 <div class="main">
 
+<div class="page-header">
+ <h2>Analytics Overview</h2>
+ <div class="actions">
+ <select class="btn btn-secondary" style="padding:10px 16px;">
+ <option>Last 30 Days</option>
+ <option>Last 6 Months</option>
+ <option>This Year</option>
+ <option>All Time</option>
+ </select>
+ <button class="btn btn-primary">
+ <i class="fas fa-download"></i> Export Report
+ </button>
+ </div>
+</div>
+
 <div class="cards">
 
-<div class="card">
-<h3>Total Crimes</h3>
-<p>120</p>
+ <div class="stat-card blue">
+ <div class="icon"><i class="fas fa-chart-bar"></i></div>
+ <h3>Total Crimes</h3>
+ <p class="value">1,247</p>
+ <p class="trend up"><i class="fas fa-arrow-up"></i> 12% increase</p>
+ </div>
+
+ <div class="stat-card red">
+ <div class="icon"><i class="fas fa-shopping-bag"></i></div>
+ <h3>Theft Cases</h3>
+ <p class="value">437</p>
+ <p class="trend down"><i class="fas fa-arrow-down"></i> 5% decrease</p>
+ </div>
+
+ <div class="stat-card orange">
+ <div class="icon"><i class="fas fa-gun"></i></div>
+ <h3>Robbery Cases</h3>
+ <p class="value">312</p>
+ <p class="trend up"><i class="fas fa-arrow-up"></i> 8% increase</p>
+ </div>
+
+ <div class="stat-card green">
+ <div class="icon"><i class="fas fa-check-circle"></i></div>
+ <h3>Solved Rate</h3>
+ <p class="value">89%</p>
+ <p class="trend up"><i class="fas fa-arrow-up"></i> 3% improvement</p>
+ </div>
+
 </div>
 
-<div class="card">
-<h3>Theft Cases</h3>
-<p>50</p>
-</div>
+<div class="charts-grid">
 
-<div class="card">
-<h3>Robbery Cases</h3>
-<p>35</p>
-</div>
+ <div class="section">
+ <div class="section-header">
+ <h2><i class="fas fa-chart-pie"></i> Crime Distribution</h2>
+ <button class="btn btn-secondary"><i class="fas fa-ellipsis-v"></i></button>
+ </div>
+ <div class="chart-placeholder">
+ <span class="icon"><i class="fas fa-chart-pie"></i></span>
+ <span>Pie Chart</span>
+ </div>
+ </div>
 
-<div class="card">
-<h3>Assault Cases</h3>
-<p>20</p>
-</div>
+ <div class="section">
+ <div class="section-header">
+ <h2><i class="fas fa-chart-line"></i> Monthly Trend</h2>
+ <button class="btn btn-secondary"><i class="fas fa-ellipsis-v"></i></button>
+ </div>
+ <div class="chart-placeholder">
+ <span class="icon"><i class="fas fa-chart-area"></i></span>
+ <span>Line Chart</span>
+ </div>
+ </div>
+
+ <div class="section">
+ <div class="section-header">
+ <h2><i class="fas fa-chart-bar"></i> Weekly Comparison</h2>
+ <button class="btn btn-secondary"><i class="fas fa-ellipsis-v"></i></button>
+ </div>
+ <div class="chart-placeholder">
+ <span class="icon"><i class="fas fa-chart-bar"></i></span>
+ <span>Bar Chart</span>
+ </div>
+ </div>
+
+ <div class="section">
+ <div class="section-header">
+ <h2><i class="fas fa-globe"></i> Regional Distribution</h2>
+ <button class="btn btn-secondary"><i class="fas fa-ellipsis-v"></i></button>
+ </div>
+ <div class="chart-placeholder">
+ <span class="icon"><i class="fas fa-globe-americas"></i></span>
+ <span>Map View</span>
+ </div>
+ </div>
 
 </div>
 

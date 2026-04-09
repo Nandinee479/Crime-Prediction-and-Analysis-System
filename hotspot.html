@@ -1,58 +1,188 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Crime Hotspots</title>
-<link rel="stylesheet" href="style.css">
+ <title>Hotspots - Crime Prediction System</title>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
 <div class="sidebar">
 
-<h2>Crime System</h2>
+<div class="sidebar-header">
+ <h2><i class="fas fa-shield-alt"></i> Crime System</h2>
+</div>
 
-<a href="dashboard.html">Dashboard</a>
-<a href="addcrime.html">Add Crime</a>
-<a href="viewcrime.html">View Crimes</a>
-<a href="statistics.html">Statistics</a>
-<a href="prediction.html">Prediction</a>
-<a href="hotspot.html">Hotspots</a>
+<nav>
+ <a href="dashboard.html">
+ <span class="icon"><i class="fas fa-home"></i></span>
+ <span>Dashboard</span>
+ </a>
+ <a href="addcrime.html">
+ <span class="icon"><i class="fas fa-plus-circle"></i></span>
+ <span>Add Crime</span>
+ </a>
+ <a href="viewcrime.html">
+ <span class="icon"><i class="fas fa-list"></i></span>
+ <span>View Crimes</span>
+ </a>
+ <a href="statistics.html">
+ <span class="icon"><i class="fas fa-chart-bar"></i></span>
+ <span>Statistics</span>
+ </a>
+ <a href="prediction.html">
+ <span class="icon"><i class="fas fa-brain"></i></span>
+ <span>Prediction</span>
+ </a>
+ <a href="hotspot.html" class="active">
+ <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+ <span>Hotspots</span>
+ </a>
+ <a href="login.html" style="margin-top:40px;">
+ <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+ <span>Logout</span>
+ </a>
+</nav>
 
 </div>
 
 <div class="topbar">
-High Risk Areas
+ <h1><i class="fas fa-map-marker-alt"></i> Crime Hotspots</h1>
+ <div class="topbar-actions">
+ <div class="user-menu">
+ <div class="user-avatar">A</div>
+ <div class="user-info">
+ <span class="name">Admin User</span>
+ <span class="role">Administrator</span>
+ </div>
+ </div>
+ </div>
 </div>
 
 <div class="main">
 
-<table>
+<div class="page-header">
+ <h2>High Risk Areas</h2>
+ <div class="actions">
+ <button class="btn btn-secondary">
+ <i class="fas fa-sync"></i> Refresh
+ </button>
+ <button class="btn btn-primary">
+ <i class="fas fa-map"></i> Full Map
+ </button>
+ </div>
+</div>
 
-<tr>
-<th>Location</th>
-<th>Total Crimes</th>
-<th>Risk Level</th>
-</tr>
+<div class="cards">
 
-<tr>
-<td>Dhaka</td>
-<td>45</td>
-<td>High</td>
-</tr>
+ <div class="stat-card red">
+ <div class="icon"><i class="fas fa-exclamation-circle"></i></div>
+ <h3>High Risk Zones</h3>
+ <p class="value">15</p>
+ <p class="trend up"><i class="fas fa-arrow-up"></i> 2 new zones</p>
+ </div>
 
-<tr>
-<td>Khulna</td>
-<td>25</td>
-<td>Medium</td>
-</tr>
+ <div class="stat-card orange">
+ <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
+ <h3>Medium Risk</h3>
+ <p class="value">32</p>
+ <p class="trend down"><i class="fas fa-arrow-down"></i> 3 resolved</p>
+ </div>
 
-<tr>
-<td>Jessore</td>
-<td>15</td>
-<td>Low</td>
-</tr>
+ <div class="stat-card green">
+ <div class="icon"><i class="fas fa-check-circle"></i></div>
+ <h3>Low Risk Zones</h3>
+ <p class="value">48</p>
+ <p class="trend up"><i class="fas fa-arrow-up"></i> 5 improved</p>
+ </div>
 
-</table>
+ <div class="stat-card blue">
+ <div class="icon"><i class="fas fa-map-marker"></i></div>
+ <h3>Total Locations</h3>
+ <p class="value">95</p>
+ <p class="trend up"><i class="fas fa-arrow-up"></i> Active monitoring</p>
+ </div>
+
+</div>
+
+<div class="section">
+
+ <div class="section-header">
+ <h2><i class="fas fa-list"></i> Risk Area Details</h2>
+ <button class="btn btn-secondary"><i class="fas fa-download"></i> Export</button>
+ </div>
+
+ <div class="table-container">
+ <table>
+ <tr>
+ <th>Location</th>
+ <th>Total Crimes</th>
+ <th>Primary Crime</th>
+ <th>Risk Level</th>
+ <th>Trend</th>
+ <th>Actions</th>
+ </tr>
+
+ <tr>
+ <td><i class="fas fa-map-marker-alt" style="color:var(--danger);"></i> Dhaka, Mirpur</td>
+ <td>147</td>
+ <td><i class="fas fa-shopping-bag"></i> Theft</td>
+ <td><span class="badge high">High</span></td>
+ <td><i class="fas fa-arrow-up" style="color:var(--danger);"></i> +12%</td>
+ <td><button class="btn btn-secondary" style="padding:6px 10px;"><i class="fas fa-eye"></i></button></td>
+ </tr>
+
+ <tr>
+ <td><i class="fas fa-map-marker-alt" style="color:var(--danger);"></i> Chittagong, Agrabad</td>
+ <td>123</td>
+ <td><i class="fas fa-gun"></i> Robbery</td>
+ <td><span class="badge high">High</span></td>
+ <td><i class="fas fa-arrow-up" style="color:var(--danger);"></i> +8%</td>
+ <td><button class="btn btn-secondary" style="padding:6px 10px;"><i class="fas fa-eye"></i></button></td>
+ </tr>
+
+ <tr>
+ <td><i class="fas fa-map-marker-alt" style="color:var(--warning);"></i> Khulna, Daulatpur</td>
+ <td>89</td>
+ <td><i class="fas fa-fist-raised"></i> Assault</td>
+ <td><span class="badge medium">Medium</span></td>
+ <td><i class="fas fa-minus" style="color:var(--text-secondary);"></i> Stable</td>
+ <td><button class="btn btn-secondary" style="padding:6px 10px;"><i class="fas fa-eye"></i></button></td>
+ </tr>
+
+ <tr>
+ <td><i class="fas fa-map-marker-alt" style="color:var(--warning);"></i> Sylhet, Zindabazar</td>
+ <td>76</td>
+ <td><i class="fas fa-credit-card"></i> Fraud</td>
+ <td><span class="badge medium">Medium</span></td>
+ <td><i class="fas fa-arrow-down" style="color:var(--success);"></i> -5%</td>
+ <td><button class="btn btn-secondary" style="padding:6px 10px;"><i class="fas fa-eye"></i></button></td>
+ </tr>
+
+ <tr>
+ <td><i class="fas fa-map-marker-alt" style="color:var(--success);"></i> Rajshahi, Boalia</td>
+ <td>45</td>
+ <td><i class="fas fa-shopping-bag"></i> Theft</td>
+ <td><span class="badge low">Low</span></td>
+ <td><i class="fas fa-arrow-down" style="color:var(--success);"></i> -15%</td>
+ <td><button class="btn btn-secondary" style="padding:6px 10px;"><i class="fas fa-eye"></i></button></td>
+ </tr>
+
+ </table>
+ </div>
+
+</div>
+
+<div class="section">
+ <div class="section-header">
+ <h2><i class="fas fa-map"></i> Interactive Hotspot Map</h2>
+ </div>
+ <div class="chart-placeholder" style="height:350px;">
+ <span class="icon"><i class="fas fa-map-marked-alt"></i></span>
+ <span>Interactive Map View - Click markers for details</span>
+ </div>
+</div>
 
 </div>
 

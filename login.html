@@ -1,22 +1,150 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Crime System Login</title>
-<link rel="stylesheet" href="style.css">
+ <title>Login - Crime Prediction System</title>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-<div class="login-box">
+<div class="login-wrapper">
 
-<h2>Crime Analysis System</h2>
+<div class="login-card">
 
-<input type="text" placeholder="Username">
-<input type="password" placeholder="Password">
+ <div class="login-header">
+ <div class="logo">
+ <i class="fas fa-shield-alt"></i>
+ </div>
+ <h1>Crime Prediction System</h1>
+ <p>Secure access to crime analytics dashboard</p>
+ </div>
 
-<button onclick="location.href='dashboard.html'">Login</button>
+ <div class="login-body">
+
+ <div class="login-tabs">
+ <button class="login-tab active" id="userTab" onclick="switchTab('user')">
+ <i class="fas fa-user"></i> User Login
+ </button>
+ <button class="login-tab" id="adminTab" onclick="switchTab('admin')">
+ <i class="fas fa-user-shield"></i> Admin Login
+ </button>
+ </div>
+
+ <form id="userForm">
+ <div class="form-group">
+ <label><i class="fas fa-user"></i> Username</label>
+ <div class="input-with-icon">
+ <i class="fas fa-user"></i>
+ <input type="text" placeholder="Enter your username">
+ </div>
+ </div>
+
+ <div class="form-group">
+ <label><i class="fas fa-lock"></i> Password</label>
+ <div class="input-with-icon">
+ <i class="fas fa-lock"></i>
+ <input type="password" placeholder="Enter your password">
+ </div>
+ </div>
+
+ <div class="remember-forgot">
+ <label class="checkbox-label">
+ <input type="checkbox">
+ Remember me
+ </label>
+ <a href="#" class="forgot-link">Forgot Password?</a>
+ </div>
+
+ <button type="button" class="btn-login" onclick="location.href='user_dashboard.html'">
+ <i class="fas fa-sign-in-alt"></i> Sign In
+ </button>
+
+ <div class="divider">or continue with</div>
+
+ <div class="social-login">
+ <button type="button" class="social-btn">
+ <i class="fab fa-google" style="color:#ea4335;"></i> Google
+ </button>
+ <button type="button" class="social-btn">
+ <i class="fab fa-microsoft" style="color:#00a4ef;"></i> Microsoft
+ </button>
+ </div>
+
+ <div class="login-footer">
+ Don't have an account? <a href="#">Sign Up</a>
+ </div>
+ </form>
+
+ <form id="adminForm" style="display:none;">
+ <div class="form-group">
+ <label><i class="fas fa-id-card"></i> Admin ID</label>
+ <div class="input-with-icon">
+ <i class="fas fa-id-card"></i>
+ <input type="text" placeholder="Enter admin ID">
+ </div>
+ </div>
+
+ <div class="form-group">
+ <label><i class="fas fa-lock"></i> Password</label>
+ <div class="input-with-icon">
+ <i class="fas fa-lock"></i>
+ <input type="password" placeholder="Enter admin password">
+ </div>
+ </div>
+
+ <div class="form-group">
+ <label><i class="fas fa-key"></i> Security Key</label>
+ <div class="input-with-icon">
+ <i class="fas fa-key"></i>
+ <input type="text" placeholder="Enter security key">
+ </div>
+ </div>
+
+ <div class="remember-forgot">
+ <label class="checkbox-label">
+ <input type="checkbox">
+ Remember this device
+ </label>
+ <a href="#" class="forgot-link">Forgot Password?</a>
+ </div>
+
+ <button type="button" class="btn-login" onclick="location.href='dashboard.html'">
+ <i class="fas fa-shield-alt"></i> Admin Access
+ </button>
+
+ <div class="login-footer">
+ <i class="fas fa-lock" style="color:var(--accent);"></i>
+ Secured with 256-bit encryption
+ </div>
+ </form>
+
+ </div>
 
 </div>
+
+</div>
+
+<script>
+ function switchTab(tab){
+ const userTab = document.getElementById('userTab');
+ const adminTab = document.getElementById('adminTab');
+ const userForm = document.getElementById('userForm');
+ const adminForm = document.getElementById('adminForm');
+
+ if(tab === 'user'){
+ userTab.classList.add('active');
+ adminTab.classList.remove('active');
+ userForm.style.display = 'block';
+ adminForm.style.display = 'none';
+ } else {
+ adminTab.classList.add('active');
+ userTab.classList.remove('active');
+ userForm.style.display = 'none';
+ adminForm.style.display = 'block';
+ }
+ }
+</script>
 
 </body>
 </html>

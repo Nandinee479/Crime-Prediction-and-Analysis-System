@@ -1,43 +1,163 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Crime Prediction</title>
-<link rel="stylesheet" href="style.css">
+ <title>Prediction - Crime Prediction System</title>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-
 <div class="sidebar">
 
-<h2>Crime System</h2>
-
-<a href="dashboard.html">Dashboard</a>
-<a href="addcrime.html">Add Crime</a>
-<a href="viewcrime.html">View Crimes</a>
-<a href="statistics.html">Statistics</a>
-<a href="prediction.html">Prediction</a>
-<a href="hotspot.html">Hotspots</a>
-
+<div class="sidebar-header">
+ <h2><i class="fas fa-shield-alt"></i> Crime System</h2>
 </div>
+
+<nav>
+ <a href="dashboard.html">
+ <span class="icon"><i class="fas fa-home"></i></span>
+ <span>Dashboard</span>
+ </a>
+ <a href="addcrime.html">
+ <span class="icon"><i class="fas fa-plus-circle"></i></span>
+ <span>Add Crime</span>
+ </a>
+ <a href="viewcrime.html">
+ <span class="icon"><i class="fas fa-list"></i></span>
+ <span>View Crimes</span>
+ </a>
+ <a href="statistics.html">
+ <span class="icon"><i class="fas fa-chart-bar"></i></span>
+ <span>Statistics</span>
+ </a>
+ <a href="prediction.html" class="active">
+ <span class="icon"><i class="fas fa-brain"></i></span>
+ <span>Prediction</span>
+ </a>
+ <a href="hotspot.html">
+ <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+ <span>Hotspots</span>
+ </a>
+ <a href="login.html" style="margin-top:40px;">
+ <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+ <span>Logout</span>
+ </a>
+</nav>
 
 </div>
 
 <div class="topbar">
-Crime Prediction Result
+ <h1><i class="fas fa-brain"></i> Crime Prediction</h1>
+ <div class="topbar-actions">
+ <div class="user-menu">
+ <div class="user-avatar">A</div>
+ <div class="user-info">
+ <span class="name">Admin User</span>
+ <span class="role">Administrator</span>
+ </div>
+ </div>
+ </div>
 </div>
 
 <div class="main">
 
-<div class="card">
+<div class="page-header">
+ <h2>AI-Powered Crime Prediction</h2>
+ <div class="actions">
+ <button class="btn btn-secondary">
+ <i class="fas fa-history"></i> Prediction History
+ </button>
+ </div>
+</div>
 
-<h3>Prediction Result</h3>
+<div class="section" style="max-width:700px;">
 
-<p><b>Location:</b> Dhaka</p>
-<p><b>Predicted Crime:</b> Theft</p>
-<p><b>Risk Level:</b> High</p>
+ <div class="section-header">
+ <h2><i class="fas fa-search"></i> Enter Prediction Parameters</h2>
+ </div>
 
-<p>This prediction is generated from historical crime data.</p>
+ <div class="form-group">
+ <label><i class="fas fa-map-marker-alt"></i> Location</label>
+ <div class="input-with-icon">
+ <i class="fas fa-map-marker-alt"></i>
+ <input type="text" placeholder="Enter location (e.g., Dhaka, Mirpur)">
+ </div>
+ </div>
+
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+ <div class="form-group">
+ <label><i class="fas fa-calendar"></i> Date</label>
+ <input type="date">
+ </div>
+
+ <div class="form-group">
+ <label><i class="fas fa-clock"></i> Time Range</label>
+ <select>
+ <option>Select Time Range</option>
+ <option>Morning (6AM - 12PM)</option>
+ <option>Afternoon (12PM - 6PM)</option>
+ <option>Evening (6PM - 10PM)</option>
+ <option>Night (10PM - 6AM)</option>
+ </select>
+ </div>
+ </div>
+
+ <div class="form-group">
+ <label><i class="fas fa-users"></i> Population Density</label>
+ <select>
+ <option>Select Density</option>
+ <option>Low</option>
+ <option>Medium</option>
+ <option>High</option>
+ <option>Very High</option>
+ </select>
+ </div>
+
+ <button class="btn btn-primary" style="margin-top:12px;">
+ <i class="fas fa-bolt"></i> Generate Prediction
+ </button>
+
+</div>
+
+<div class="section">
+
+ <div class="section-header">
+ <h2><i class="fas fa-clipboard-check"></i> Prediction Result</h2>
+ </div>
+
+ <div class="cards">
+ <div class="stat-card blue">
+ <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+ <h3>Location</h3>
+ <p class="value" style="font-size:24px;">Dhaka</p>
+ </div>
+
+ <div class="stat-card red">
+ <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
+ <h3>Predicted Crime</h3>
+ <p class="value" style="font-size:24px;">Theft</p>
+ </div>
+
+ <div class="stat-card orange">
+ <div class="icon"><i class="fas fa-siren-on"></i></div>
+ <h3>Risk Level</h3>
+ <p class="value" style="font-size:24px;color:var(--danger);">High</p>
+ </div>
+
+ <div class="stat-card green">
+ <div class="icon"><i class="fas fa-percentage"></i></div>
+ <h3>Confidence</h3>
+ <p class="value" style="font-size:24px;">87%</p>
+ </div>
+ </div>
+
+ <div style="padding:20px;background:var(--bg-main);border-radius:12px;margin-top:20px;">
+ <p style="color:var(--text-secondary);font-size:14px;display:flex;align-items:flex-start;gap:10px;">
+ <i class="fas fa-info-circle" style="color:var(--accent);margin-top:3px;"></i>
+ <span><strong>Note:</strong> This prediction is generated using historical crime data and machine learning algorithms. Results are based on patterns identified from previous incidents in the specified location. Always verify with local authorities.</span>
+ </p>
+ </div>
 
 </div>
 
